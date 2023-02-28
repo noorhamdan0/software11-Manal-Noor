@@ -1,5 +1,9 @@
 Feature: Register user
 
+Background: 
+ 
+
+
   @tag1
 Scenario: Register user successful 
 	
