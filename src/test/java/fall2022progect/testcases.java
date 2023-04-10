@@ -1,11 +1,9 @@
 package fall2022progect;
-import org.junit.Test;
-import fall2022progect.util.clean0;
+import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import io.cucumber.junit.CucumberOptions.SnippetType;
 
-import org.junit.runner.RunWith;
 
 
 @RunWith(Cucumber.class)
@@ -17,9 +15,7 @@ import org.junit.runner.RunWith;
 		glue="fall2022progect"
 		)
 
- public class testcases {
-//
-//	@Test
-//	public void test0(){
-//	clean0 ob = new clean0();}
+
+public class testcases {
+
 }

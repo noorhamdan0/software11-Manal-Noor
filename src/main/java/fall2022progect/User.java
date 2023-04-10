@@ -1,88 +1,178 @@
 package fall2022progect;
 
-import java.util.logging.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 public class User {
-	static Logger logger = Logger.getLogger(User.class.getName());
 	
-	String Usrname;
-	String Pass;
-	boolean loginstat;
-	
-	protected static List<User> users0 =new ArrayList<User>();
+	 static Logger logger = Logger.getLogger(User.class.getName());
+	String password;
+	String username;
+	String type;
+	int aom;
+    private boolean logged;
+  	static boolean n;
+  	static boolean m;
+  	protected static int amontofmony ;
+  	protected static List<User> users1 =new ArrayList<User>();
+  	protected static List<String> commint =new ArrayList<String>();
+  	
+    public User(){
+    	User.users1.add(new User("batool","123","t"));
+		User.users1.add(new User("manar","1234s","t"));
+		User.users1.add(new User("ahmad","1234","s",500));
+		User.users1.add(new User("saja","1234","s",600));	
+    	
+    }
+  
+    
+    public User(String name, String pass,String type,int i){
+    	this.username=(name);
+    	this.password=(pass);
+        this.type=(type);
+        this.aom=i;
 
-	public User(String name, String pass){
-    	this.Usrname=(name);
-    	this.Pass=(pass);
-    	}
-	
-	public User () {
-		loginstat = false;	
+    	
+    }
+    public User(String name, String pass,String type){
+    	this.username=(name);
+    	this.password=(pass);
+        this.type=(type);
+       
+    }
+   
+	public void setType(String string) {
+		
+		this.type = string;
+	}
+    
+	public void setLogstat(boolean l) {
+		
+		this.logged = l;
 	}
 
+	public boolean getLogstat() {
+		
+		return logged;
+	}
 
 	public void setUsrname(String string) {
 		
-		Usrname=string;
-		
-	}
-public String getusername() {
-		
-		return Usrname;
+		this.username = string;
 	}
 
 	public void setPass(String string2) {
 		
-		Pass=string2;
+		this.password= string2;
 	}
-public String getpass() {
+	
+	public static void setamontofmony(int string2) {
 		
-		return Pass;
+		User.amontofmony= string2;
 	}
+	
+	
 
-	public void setloginstat(boolean b) {
+
+	public boolean loginCH(String string, String string2) {
 		
-		this.loginstat = b;
-	}
-
-public boolean getlog() {
+		if(string.equals(username) && string2.equals(password)) {
+			logged = true;
+		}
 		
-		return loginstat;
+		else logged = false;
+		
+		setLogstat(logged);
+		return logged;
 	}
 
 
-public boolean  loginCH(String string, String string2) {
-	
-	if(string.equals(Usrname) && string2.equals(Pass)) {
-		loginstat = true;
+	public String getusername() {
+		
+		return username;
 	}
 	
-	else loginstat = false;
-	
-	setloginstat(loginstat);
-	return loginstat;
-}
-
-public boolean isRegest(String string) {
-	
-	for (int i = 0 ; i<users0.size();i++) {
-		if (users0.get(i).getusername().equals(string))
-			return true;
+	public int getaom() {
+		
+		return amontofmony;
 	}
-	return false;
-}
 
-public static void adduser(User a) {
-	User u = new User();
-	if(u.getlog()) {
-		users0.add(a);
+	public String getpass() {
+		
+		return password;
 	}
-	else
-		logger.log(Level.INFO,"you Should login first");
+	
+	public String getType() {
+		return type;
+	}
+	
+	public static void adduser(User l) {
+	User u =new User();
+		if(u.getLogstat())
+		{
+			users1.add(l);
+			
+		}
+		else
+			logger.log(Level.INFO,"you Should login first");
+	}
+	
+   
+	
+	 public boolean isnameEqual(String name){
+	        return this.username.toLowerCase().equals(name);
+	    }
+	    public boolean ispassEqual(String pass){
+	        return this.password.toLowerCase().equals(pass);
+	    }
+
+	    
+	    public boolean isTechar(String ut) {
+	    	return ut.toLowerCase().equalsIgnoreCase("t");
+	    }
+	    
+	    public User userinfo(String inp) {
+	    	User b = new User();
+			for (int i = 0;i<users1.size();i++) {
+				if (users1.get(i).getusername().equals(inp)) {
+					b = users1.get(i);
+					break;
+				}
+			}
+			return b;
+	    }
+
+	
+	    public boolean istybeEqual(String type){
+	        return this.type.toLowerCase().equals(type);
+	    }
+
+		public boolean isRegest(String string) {
+			
+			for (int i = 0 ; i<users1.size();i++) {
+				if (users1.get(i).getusername().equals(string))
+					return true;
+			}
+			return false;
+		}
+		
+		
+		  public void note(String commint) {
+
+
+		    	User.commint.add(commint+"\n");	
+		    }
+	
+		  public void noteshow() {
+			  for (int i = 0 ; i<commint.size();i++) {
+				  logger.log(Level.INFO,commint.get(i));
+			  }
+		  }
+
+	
+	
+	
 }
-}
-
-
-
