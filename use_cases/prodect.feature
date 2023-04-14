@@ -4,10 +4,10 @@ Feature: product
 
 Background: 
 Given table
-|prodect name|picture     |description|order state
-|c           |a           | cleaning  |wating
-|s           |b           | dry       |in tretment
-|d           |f           | dry       |complete
+| prodect_name | picture     | description | order_state |
+| c            | a           |  cleaning   | wating  |
+| s            | b           |  dry        | in tretment  |
+| d            | f           | dry        | complete  |
 
   @tag1
   Scenario: user add product to clean  
