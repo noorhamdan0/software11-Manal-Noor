@@ -9,9 +9,12 @@ import java.util.logging.Logger;
 public class User {
 	
 	 static Logger logger = Logger.getLogger(User.class.getName());
+	
 	String password;
 	String username;
 	String type;
+	String id;
+	String add;
 	int aom;
     private boolean logged;
   	static boolean n;
@@ -21,28 +24,32 @@ public class User {
   	protected static List<String> commint =new ArrayList<String>();
   	
     public User(){
-    	User.users1.add(new User("batool","123","t"));
-		User.users1.add(new User("manar","1234s","t"));
-		User.users1.add(new User("ahmad","1234","s",500));
-		User.users1.add(new User("saja","1234","s",600));	
+    	User.users1.add(new User("119","j","batool","123","t"));
+		User.users1.add(new User("118","n","manar","1234s","t"));
+		User.users1.add(new User("117","r","ahmad","1234","s",500));
+		User.users1.add(new User("116","j","saja","1234","s",600));	
     	
     }
   
     
-    public User(String name, String pass,String type,int i){
+    public User(String id, String add ,String name, String pass,String type,int i){
     	this.username=(name);
     	this.password=(pass);
         this.type=(type);
+        this.id=id;
+        this.add=add;
         this.aom=i;
 
     	
     }
-    public User(String name, String pass,String type){
+    public User(String id, String add,String name, String pass,String type){
     	this.username=(name);
     	this.password=(pass);
         this.type=(type);
-       
+        this.id=id;
+        this.add=add;
     }
+    
    
 	public void setType(String string) {
 		
@@ -98,6 +105,10 @@ public class User {
 	public int getaom() {
 		
 		return amontofmony;
+	}
+	public String getid() {
+		
+		return id;
 	}
 
 	public String getpass() {
@@ -171,6 +182,20 @@ public class User {
 				  logger.log(Level.INFO,commint.get(i));
 			  }
 		  }
+
+
+		public void setid(String string4) {
+			this.id = string4;
+			
+		}
+
+
+		public void setadd(String string5) {
+			this.add=string5;
+		}
+
+
+		
 
 	
 	

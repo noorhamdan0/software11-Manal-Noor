@@ -34,7 +34,7 @@ public void theProdectIsEnterd(String string) {
 }
 @Then("prodect whith prodect name {string}, regestd for {string}")
 public void prodectWhithProdectNameRegestdFor(String string, String string2) {
-	
+	// need to check this one , suppose to make for loop and add the name fore the last product , and this function is empty 
 	p.setuserid(string,string2);
 	assertTrue(true);
 	

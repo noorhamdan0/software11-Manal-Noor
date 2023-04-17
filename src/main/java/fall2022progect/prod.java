@@ -12,27 +12,27 @@ public class prod {
 	String dis;
 	String req;
 	String state;
-	int userid;
+	String userid;
 	static Logger logger = Logger.getLogger(User.class.getName());
 	User user =new User();
 	
 	protected static List<prod> prod0 =new ArrayList<prod>();
 	
 	 public prod(){
-		 prod.prod0.add(new prod("c","123","t","waiting"));
-		 prod.prod0.add(new prod("s","1234s","t","waiting"));
-		 prod.prod0.add(new prod("f","1234","s","waiting"));
-		 prod.prod0.add(new prod("sd","1234","s","waiting"));	
+		 prod.prod0.add(new prod("119","c","123","t","waiting"));
+		 prod.prod0.add(new prod("118","s","1234s","t","waiting"));
+		 prod.prod0.add(new prod("117","f","1234","s","waiting"));
+		 prod.prod0.add(new prod("116","sd","1234","s","waiting"));	
 	    	
 	    }
 	
-	public prod(String prodname, String picture,String dis,String s){
+	public prod(String id ,String prodname, String picture,String dis,String s){
     	this.prodname=prodname;
     	this.picture=picture;
     	this.dis=dis;
     	this.state=s;
-    	//this.req=req;
-    	//this.userid= user.getid();
+    	
+    	this.userid= id;
     	
     	}
 	
@@ -57,15 +57,26 @@ public class prod {
 		
 	}
 	
+	public String getprodname() {
+		return this.prodname;
+		
+	}
+	public String getuserid() {
+		return this.userid;
+		
+	}
+	
 	public static void addprod(prod a) {
 		
 	
 			prod0.add(a);
 		}
-//		else
-//			logger.log(Level.INFO,"you Should login first");
+
  void setuserid(String string, String string2) {
-		// TODO Auto-generated method stub
+		for (int i=0; i<prod0.size();i++) {
+			if(prod0.get(i).getprodname().equals(string)) {
+			prod0.get(i).userid=string2;
+		}}
 		
 	}
 	}

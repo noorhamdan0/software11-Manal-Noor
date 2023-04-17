@@ -21,12 +21,16 @@ public class Register {
     = Logger.getLogger(Register.class.getName()); 
 
 
-	@Given("there is a user whith USER NAME {string} , PASSWORD {string} , Type {string}")
-	public void there_is_a_user_whith_user_name_password_type(String string, String string2, String string3) {
-	       u.setUsrname(string);
+	@Given("there is a user whith USER NAME {string} , PASSWORD {string} , Type {string},USER id {string} ,USER add {string}")
+	public void thereIsAUserWhithUSERNAMEPASSWORDTypeUSERIdUSERAdd(String string, String string2, String string3, String string4, String string5) {
+		 u.setUsrname(string);
 		   u.setPass(string2);
 		   u.setType(string3);
+		   u.setid(string4);
+		   u.setadd(string5);
 	}
+
+	
 	@When("the user is registered {string}")
 	public void the_user_is_registered(String string) {
 		
@@ -35,7 +39,8 @@ public class Register {
 		 
 	}
 
-	
+
+
 
 	@Then("the user whith NAME {string} , PASSWORD {string} , Type {string} is registered in the system")
 	public void the_user_whith_name_password_type_is_registered_in_the_system(String string, String string2, String string3) {
@@ -43,11 +48,13 @@ public class Register {
 		 if(!u.isRegest(string))
 		assertTrue(true);
 	}
-
+	
+	
 	@Then("the error message {string} is given")
 	public void the_error_message_is_given(String string) {
 	    
 		logger.log(Level.INFO,"this user is already registered");
+	
 	}
 
 
