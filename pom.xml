@@ -71,4 +71,9 @@
 </dependency>
 
   </dependencies>
+  
+  <properties>
+  <sonar.organization>noorhamdan0</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+</properties>
 </project>

@@ -79,4 +79,9 @@ public class prod {
 		}}
 		
 	}
+
+public void delete(String pid) {
+	// TODO Auto-generated method stub
+	
+}
 	}

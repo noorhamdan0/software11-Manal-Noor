@@ -195,7 +195,16 @@ public class User {
 		}
 
 
-		
+		public void delete(String string) {
+			int a=0;
+			for (int i=0; i<users1.size();i++) {
+				if (users1.get(i).id==string) {
+				users1.remove(i);
+				a=1;}
+			}
+			if (a==0) {System.out.print("the user not found");}
+		//	else if (a==1) {System.out.print("the user is deleted");}
+		}
 
 	
 	

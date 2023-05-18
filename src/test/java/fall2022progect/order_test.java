@@ -41,9 +41,9 @@ public class order_test {
 	 public void theOrderWithStatusShouldBe(String string, String string2) {
 		 for(int i=0; i<prod0.size();i++) {
 				
-				if ( p.prodname.equals(string)) {
+				if ( prod0.get(i).prodname.equals(string)) {
 		
-					p.state=string2;
+					prod0.get(i).state=string2;
 				}
 				
 			}
