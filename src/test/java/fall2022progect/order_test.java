@@ -10,8 +10,8 @@ import io.cucumber.java.en.When;
 
 public class order_test {
 	
-	prod p = new prod();
-	 List< prod>prod0= new ArrayList<prod>();
+	Prod p = new Prod();
+	 List< Prod>prod0= new ArrayList<Prod>();
 
 
 	 @Given("there is prodect with ORDER STATUS {string}")

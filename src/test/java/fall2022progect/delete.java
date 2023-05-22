@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 public class delete {
 
 	User user =new User();
-	prod p = new prod();
+	Prod p = new Prod();
 	
 	String cid;
 	String pid;

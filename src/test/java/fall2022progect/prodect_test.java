@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
+
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,8 +15,8 @@ import io.cucumber.java.en.When;
 public class prodect_test {
  
 
-	prod p = new prod();
-	 List< prod>prod0= new ArrayList<prod>();
+	Prod p = new Prod();
+	 List< Prod>prod0= new ArrayList<Prod>();
 	  
 	
 
@@ -29,12 +29,11 @@ public void thereIsAProdectWhithPRODECTNAMEPITUREDISCRIPTIONORDERSTATUS(String s
 }
 @When("the prodect is enterd {string}")
 public void theProdectIsEnterd(String string) {
-	prod.addprod(p); 
+	Prod.addprod(p); 
 	
 }
 @Then("prodect whith prodect name {string}, regestd for {string}")
 public void prodectWhithProdectNameRegestdFor(String string, String string2) {
-	// need to check this one , suppose to make for loop and add the name fore the last product , and this function is empty 
 	p.setuserid(string,string2);
 	assertTrue(true);
 	

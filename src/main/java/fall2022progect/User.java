@@ -198,7 +198,8 @@ public class User {
 		public void delete(String string) {
 			int a=0;
 			for (int i=0; i<users1.size();i++) {
-				if (users1.get(i).id==string) {
+				if (users1.get(i).id.equals(string)) {
+					 
 				users1.remove(i);
 				a=1;}
 			}
